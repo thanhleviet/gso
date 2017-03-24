@@ -210,9 +210,23 @@ for(i in seq_along(urls)) {
   download(urls[i], driver, to_dir[i], "/Users/choisy/Downloads")
 }
 
+# stops the selenium server:
+rD[["server"]]$stop()
+
+# remove the "(*)" from the files names:
+dirs <- grep("\\..*$", dir(), value = TRUE, invert = TRUE)
+for(directory in dirs) {
+  setwd(directory)
+  for(pattern in c("\\(\\*\\)", "\\*")) {
+    old_names <- dir()
+    old_names <- grep(pattern, old_names, value = TRUE)
+    new_names <- gsub(pattern, "", old_names)
+    for(i in seq_along(old_names)) file.rename(old_names[i], new_names[i])
+  }
+  setwd("..")
+}
+
 # back to the initial directory:
 setwd(path0)
 
-# stops the selenium server:
-rD[["server"]]$stop()
 
