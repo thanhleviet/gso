@@ -226,6 +226,16 @@ for(directory in dirs) {
   setwd("..")
 }
 
+# shortening too long files names:
+setwd("Health, Culture and Living Standard")
+f <- function(x) {
+  nbchar <- nchar(x)
+  x[which(nbchar > sort(nbchar, decreasing = TRUE)[3])]
+}
+oldnames <- f(dir())
+newnames <- sub(",.*$", "", oldnames)
+for(i in seq_along(oldnames)) file.rename(oldnames[i], newnames[i])
+
 # back to the initial directory:
 setwd(path0)
 
