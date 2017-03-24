@@ -1,0 +1,13 @@
+Package: gso
+Type: Package
+Title: Data from the General Statistical Office of Vietnam
+Version: 0.1.0
+Author: Marc Choisy
+Maintainer: Marc Choisy <marc.choisy@ird.fr>
+Description: Contains the data from the General Statistical Office of Vietnam (last update, March 21st, 2017)
+License: GPL-3
+LazyData: TRUE
+RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
