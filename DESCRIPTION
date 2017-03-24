@@ -1,6 +1,6 @@
 Package: gso
 Type: Package
-Title: Data from the General Statistical Office of Vietnam
+Title: Data from the General Statistical Office (GSO) of Vietnam
 Version: 0.1.0
 Author: Marc Choisy
 Maintainer: Marc Choisy <marc.choisy@ird.fr>
